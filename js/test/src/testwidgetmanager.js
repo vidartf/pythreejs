@@ -13,7 +13,7 @@ function WidgetManager(kernel) {
     this.kernel = kernel;
     kernel.registerCommTarget(this.comm_target_name,
         (comm, msg) => {
-            let oldComm = new widgets.shims.services.Comm(comm);
+            var oldComm = new widgets.shims.services.Comm(comm);
             this.handle_comm_open(oldComm, msg);
     });
 
@@ -70,7 +70,7 @@ _.extend(WidgetManager.prototype, widgets.ManagerBase.prototype, {
      * Create a comm.
      */
     _create_comm(target_name, model_id, data, metadata) {
-        let comm = this.kernel.connectToComm(target_name, model_id);
+        var comm = this.kernel.connectToComm(target_name, model_id);
         if (data || metadata) {
             comm.open(data, metadata);
         }
