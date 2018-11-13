@@ -17,8 +17,8 @@ var WebGLRendererModel = RenderableModel.extend({
         _view_name: 'WebGLRendererView',
         _model_name: 'WebGLRendererModel',
 
-        width: 200,
-        height: 200,
+        _width: 200,
+        _height: 200,
 
     }),
 
